@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CradLayout = ({ title, description, releaseDate, posterUrl, id }) => {
+const CradLayout = ({ title, description, releaseDate, posterUrl, id, showButton = true}) => {
   return (
     <Card
       sx={{
@@ -35,6 +35,7 @@ const CradLayout = ({ title, description, releaseDate, posterUrl, id }) => {
           {new Date(releaseDate).toDateString()}
         </Typography>
       </CardContent>
+      {showButton && (
       <CardActions>
         <Button
           LinkComponent={Link}
