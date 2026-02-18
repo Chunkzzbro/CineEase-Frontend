@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MovieItem = ({ title, releaseDate, posterUrl, id }) => {
+const MovieItem = ({ title, releaseDate, posterUrl, id, showButton = true }) => {
   return (
     <Card
       sx={{
@@ -30,24 +30,24 @@ const MovieItem = ({ title, releaseDate, posterUrl, id }) => {
           {new Date(releaseDate).toDateString()}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button
-          variant="contained"
-          fullWidth
-          LinkComponent={Link}
-          to={`/booking/${id}`}
-          sx={{
-            margin: "auto",
-            bgcolor: "#2b2d42",
-            ":hover": {
-              bgcolor: "#121217",
-            },
-          }}
-          size="small"
-        >
-          Book
-        </Button>
-      </CardActions>
+      {showButton && (
+        <CardActions>
+          <Button
+            variant="contained"
+            fullWidth
+            LinkComponent={Link}
+            to={`/booking/${id}`}
+            sx={{
+              margin: "auto",
+              bgcolor: "#2b2d42",
+              ":hover": { bgcolor: "#121217" },
+            }}
+            size="small"
+          >
+            Book
+          </Button>
+        </CardActions>
+    )}
     </Card>
   );
 };
