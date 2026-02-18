@@ -54,6 +54,7 @@ const CradLayout = ({ title, description, releaseDate, posterUrl, id, showButton
           Book Now
         </Button>
       </CardActions>
+    )}
     </Card>
   );
 };
