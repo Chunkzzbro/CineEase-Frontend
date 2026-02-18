@@ -36,25 +36,28 @@ const CradLayout = ({ title, description, releaseDate, posterUrl, id, showButton
         </Typography>
       </CardContent>
       {showButton && (
-      <CardActions>
-        <Button
-          LinkComponent={Link}
-          to={`/booking/${id}`}
-          fullWidth
-          variant="contained"
-          sx={{
-            margin: "auto",
-            bgcolor: "#2b2d42",
-            ":hover": {
-              bgcolor: "#121217",
-            },
-            borderRadius: 5,
-          }}
-        >
-          Book Now
-        </Button>
-      </CardActions>
-    )}
+        <CardActions>
+          <Button
+            {...(showButton
+              ? {
+                  LinkComponent: Link,
+                  to: `/booking/${id}`,
+                }
+              : {})}
+            fullWidth
+            variant="contained"
+            disabled={!showButton}
+            sx={{
+              margin: "auto",
+              bgcolor: "#2b2d42",
+              ":hover": { bgcolor: "#121217" },
+              borderRadius: 5,
+            }}
+          >
+            Book Now
+          </Button>
+        </CardActions>
+      )}
     </Card>
   );
 };
