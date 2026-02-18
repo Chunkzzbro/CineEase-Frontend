@@ -40,7 +40,7 @@ const HomeLayout = () => {
             .slice(0, 4)
             .map((movie, index) => (
               <CradLayout
-                id={movie._id}
+                id={movie.id || movie._id}
                 title={movie.title}
                 releaseDate={movie.releaseDate}
                 posterUrl={movie.posterUrl}
