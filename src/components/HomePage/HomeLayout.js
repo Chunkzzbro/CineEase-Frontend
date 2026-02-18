@@ -8,7 +8,7 @@ const HomeLayout = () => {
   const [movies, setMovies] = useState();
   useEffect(() => {
     getAllMovies()
-      .then((data) => setMovies(data.movies))
+      .then((data) => setMovies(data))
       .catch((err) => console.log(err));
   }, []);
   console.log(movies);
