@@ -45,6 +45,7 @@ const HomeLayout = () => {
                 releaseDate={movie.releaseDate}
                 posterUrl={movie.posterUrl}
                 description={movie.description}
+                showButton={false}
                 key={index}
               />
             ))}
